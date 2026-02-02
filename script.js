@@ -125,3 +125,59 @@ const cat2 = {
 
 cat.greeting();
 cat2.greeting();
+
+the 4th question
+
+Object basics 4
+
+In the code you wrote for Task 3, the greeting() method and properties are defined twice, once for each cat. This isn't ideal: specifically, it violates a principle in programming called DRY or "Don't Repeat Yourself". In this task we want you to improve the code so the object members are only defined once.
+
+To complete the task:
+
+    Create a JavaScript class that defines cat instances
+    Use your class along with the new keyword to create the cat and cat2 instances.
+
+js
+Play
+
+const cat = {
+  name: "Bertie",
+  breed: "Cymric",
+  color: "white",
+  greeting: function () {
+    console.log(`Hello, said ${this.name} the ${this.breed}.`);
+  },
+};
+
+const cat2 = {
+  name: "Elfie",
+  breed: "Aphrodite Giant",
+  color: "ginger",
+  greeting: function () {
+    console.log(`Hello, said ${this.name} the ${this.breed}.`);
+  },
+};
+
+// Don't edit the code below here!
+
+cat.greeting();
+cat2.greeting();
+
+
+my attempt
+class Cat {
+    constructor(name, breed, color) {
+        this.name = name;
+        this.breed = breed;
+        this.color = color;
+    }
+    greeting() {
+        console.log(`Hello, said ${this.name} the ${this.breed}`)
+    }
+}
+
+const cat1 = new Cat("Bernice", "Cymric", "white");
+const cat2 = new Cat("Pete", "x", "brown");
+
+cat1.greeting();
+cat2.greeting();
